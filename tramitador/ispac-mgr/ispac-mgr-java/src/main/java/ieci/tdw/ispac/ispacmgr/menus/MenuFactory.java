@@ -822,12 +822,29 @@ public class MenuFactory {
 				"(\"batchSign.do?" + ActionsConstants.PARAMETER_METHOD + "=" + ActionsConstants.CALCULATE_DOCUMENTS_HASH + "\", \"\"," +
 						" \"defaultForm\"  , \""+bundle.getString("element.noSelect")+"\" , \""+bundle.getString("common.alert")+"\", \""+bundle.getString("common.message.ok")+"\", \""+bundle.getString("common.message.cancel")+"\");"));
 	    BeanResourceFilter.translateActionKeys(stateActions, ctx.getLocale(), resources);
+	    
+	    //[MQE Ticket #31] Añadimos la opcion de Rechazar firma
+        stateActions.add(new ActionBean(resources.getMessage(ctx.getLocale(), "ispac.action.batchsign.rechazar"),
+				"javascript:takeElementInFormWorkFrame" +
+				"(\"batchSignRechazar.do?" + ActionsConstants.PARAMETER_METHOD + "=" + ActionsConstants.CONFIRMAR_RECHAZO + "\", \"\"," +
+						" \"defaultForm\"  , \""+bundle.getString("element.noSelect")+"\" , \""+bundle.getString("common.alert")+"\", \""+bundle.getString("common.message.ok")+"\", \""+bundle.getString("common.message.cancel")+"\");"));
+	    BeanResourceFilter.translateActionKeys(stateActions, ctx.getLocale(), resources);
+	    //[MQE Ticket #31] Fin Rechazar firma
+	    
+	    
         menu.addItems(stateActions);
         listMenus.add(menu);
 
         listMenus.add(createMenu(
    	    		resources.getMessage(ctx.getLocale(), "ispac.action.sing.historic"),
    				"/showSignHistoric.do"));
+        
+        
+        //[MQE Ticket #41] Añadimos la opción Histórico de Rechazos
+        listMenus.add(createMenu(
+   	    		resources.getMessage(ctx.getLocale(), "es.dipucr.rechazo.historico"),
+   				"/showSignRechazoHistoric.do"));
+        //[MQE Ticket #41] Fin Histórico de Rechazos
 
         //listMenus.add(createExitOptionMenu(ctx, resources));
 
