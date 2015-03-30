@@ -201,4 +201,10 @@
   	<put name="body" value="/apps/selectEntity.jsp"/>
   </definition>
   
+  <!-- [MQE Ticket #41] Opción Históricos de Rechazados -->
+  <definition name="signRechazoHistoric" extends="ispac_listlayout">
+    <put name="body" value="/ispac/common/signRechazoHistoric.jsp"/>
+  </definition>
+  <!-- [MQE Ticket #41] Fin modificaciones -->
+  
 </tiles-definitions>

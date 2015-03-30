@@ -124,5 +124,9 @@ public class ActionsConstants {
 	public static final String CURRENT_STATE = "_currentState";
 
 	public static final String LOAD_NOT_ASSOCIATED = "loadNotAssociated";
-
+	
+    //[MQE Ticket #31] Añadimos la opcion de Rechazar firma
+	public static final String RECHAZAR_FIRMA = "rechazarFirma";
+	public static final String CONFIRMAR_RECHAZO = "confirmaRechazo";
+    //[MQE Ticket #31] Fin Rechazar firma
 }
